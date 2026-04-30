@@ -1,32 +1,40 @@
-# Travel Memory
+# TravelMemory - Scalable MERN Deployment
 
-`.env` file to work with the backend after creating a database in mongodb: 
+This repository contains the full-stack TravelMemory application, deployed on a high-availability AWS infrastructure.
 
-```
-MONGO_URI='ENTER_YOUR_URL'
-PORT=3001
-```
+## 🚀 Project Overview
+The objective of this project was to deploy a MERN (MongoDB, Express, React, Node.js) application on Amazon EC2, ensuring scalability through Load Balancing and accessibility via a custom domain.
 
-Data format to be added: 
+## 🏗️ Architecture
+The deployment features:
+- **Frontend:** React.js (Served via Nginx)
+- **Backend:** Node.js (Managed by PM2)
+- **Reverse Proxy:** Nginx (Handling Port 80 to Port 3000)
+- **Database:** MongoDB Atlas (Cloud)
+- **Infrastructure:** AWS Application Load Balancer (ALB) across multiple Availability Zones.
+- **Domain:** Hosted on GoDaddy (`anupam66kumar.xyz`).
 
-```json
-{
-    "tripName": "Incredible India",
-    "startDateOfJourney": "19-03-2022",
-    "endDateOfJourney": "27-03-2022",
-    "nameOfHotels":"Hotel Namaste, Backpackers Club",
-    "placesVisited":"Delhi, Kolkata, Chennai, Mumbai",
-    "totalCost": 800000,
-    "tripType": "leisure",
-    "experience": "Lorem Ipsum, Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum, ",
-    "image": "https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg",
-    "shortDescription":"India is a wonderful country with rich culture and good people.",
-    "featured": true
-}
-```
+## 🛠️ Deployment Steps
 
+### 1. Backend & Proxy Setup
+- Cloned the repository and configured `.env` for database connectivity.
+- Set up Nginx as a reverse proxy to manage traffic between the web and the Node.js application.
 
-For frontend, you need to create `.env` file and put the following content (remember to change it based on your requirements):
-```bash
-REACT_APP_BACKEND_URL=http://localhost:3001
-```
+### 2. Frontend Integration
+- Updated `urls.js` to link the React frontend to the backend API.
+- Generated production builds served via Nginx.
+
+### 3. Scaling & High Availability
+- Created an Amazon Machine Image (AMI) for rapid scaling.
+- Deployed multiple instances across different AZs.
+- Configured an Application Load Balancer to distribute incoming traffic and provide fault tolerance.
+
+### 4. Custom Domain
+- Integrated a custom domain using GoDaddy DNS.
+- Mapped the ALB endpoint using a CNAME record for seamless user access.
+
+## 📊 Deployment Diagram
+The architectural flow (GoDaddy -> AWS ALB -> EC2 Cluster -> MongoDB Atlas) is documented in the repository under `/docs` (or root).
+
+## 👤 Author
+**Anupam Kumar** *Senior Technical Support Engineer*
