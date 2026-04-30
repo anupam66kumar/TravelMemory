@@ -36,5 +36,5 @@ The objective of this project was to deploy a MERN (MongoDB, Express, React, Nod
 - Mapped the ALB endpoint using a CNAME record.
 
 ## 👤 Author
-[cite_start]**Anupam Kumar** 
-[cite_start]*Senior Technical Support Engineer*
+**Anupam Kumar** 
+*Senior Technical Support Engineer*
