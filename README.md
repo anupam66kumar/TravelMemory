@@ -38,3 +38,8 @@ The objective of this project was to deploy a MERN (MongoDB, Express, React, Nod
 ## 👤 Author
 **Anupam Kumar** 
 *Senior Technical Support Engineer*
+
+## REFERENCE
+- You will find a document named as "documentation travelmemory.docx" in the main branch.
+- It has all the steps performed and verifications as well to implement travel memory app.
+- Perma Link of the documentation: https://github.com/anupam66kumar/TravelMemory/blob/b957ce58adbb6d18188cbf84b4c9a91fdae3a002/documentation%20travelmemory.docx
